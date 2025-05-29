@@ -1,0 +1,70 @@
+app:
+  name: amantana
+  version: 1.0.0
+  env: development
+  port: 8080
+  debug: true
+  read_timeout: 10s
+  write_timeout: 10s
+  graceful_timeout: 8s
+
+database:
+  driver: postgres
+  host: localhost
+  port: 5432
+  name: amantana_db
+  user: postgres
+  password: postgres
+  ssl_mode: disable
+  max_connections: 100
+  max_idle_connections: 10
+  max_lifetime_connections: 2
+
+jwt:
+  secret: your-256-bit-secret
+  expiration_hours: 24
+
+logger:
+  level: debug
+  format: json
+  output: stdout
+
+redis:
+  enabled: false
+  host: localhost
+  port: 6379
+  password: ""
+  db: 0
+
+cors:
+  allowed_origins:
+    - "*"
+  allowed_methods:
+    - GET
+    - POST
+    - PUT
+    - DELETE
+    - OPTIONS
+  allowed_headers:
+    - "*"
+  exposed_headers:
+    - "Content-Length"
+  allow_credentials: true
+  max_age: 300
+
+rate_limit:
+  enabled: true
+  requests: 100
+  duration: 1m
+
+metrics:
+  enabled: true
+  port: 9090
+
+swagger:
+  enabled: true
+  path: /swagger/*
+
+health:
+  enabled: true
+  path: /health

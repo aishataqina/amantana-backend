@@ -1,0 +1,76 @@
+# Binary files
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+amantana
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Environment files
+.env
+*.env
+.env.*
+!.env.example
+
+# Config files
+/configs/*.yaml
+/configs/*.yml
+!/configs/*.example.yaml
+!/configs/*.example.yml
+
+# Log files
+*.log
+logs/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary files
+tmp/
+temp/
+
+# Go specific
+vendor/
+
+# Debug files
+debug/
+
+# Test coverage
+coverage.txt
+coverage.html
+
+# Air live reload
+tmp/
+
+# Binary output directory
+bin/
+dist/
+
+# Local development files
+notes.txt
+TODO.txt
+
+# Dependencies
+node_modules/
+
+# Build output
+build/
+
+# Certificate files
+*.pem
+*.key
+*.crt
+
+# Cache directories
+.cache/ 

@@ -1,0 +1,115 @@
+openapi: 3.0.0
+info:
+  title: Plants API
+  description: API for managing plants
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:8080
+    description: Local development server
+
+paths:
+  /plants:
+    get:
+      summary: Get all plants
+      description: Retrieve a list of all plants
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Plant"
+        "500":
+          description: Internal server error
+
+    post:
+      summary: Create a new plant
+      description: Add a new plant to the database
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PlantInput"
+      responses:
+        "201":
+          description: Plant created successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Plant"
+        "400":
+          description: Invalid input
+        "500":
+          description: Internal server error
+
+  /plants/{id}:
+    get:
+      summary: Get plant by ID
+      description: Retrieve a plant by its ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: uint
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Plant"
+        "404":
+          description: Plant not found
+        "500":
+          description: Internal server error
+
+components:
+  schemas:
+    Plant:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: uint
+        name:
+          type: string
+        species:
+          type: string
+        description:
+          type: string
+        water_needs:
+          type: string
+        sun_light:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+      required:
+        - name
+        - species
+
+    PlantInput:
+      type: object
+      properties:
+        name:
+          type: string
+        species:
+          type: string
+        description:
+          type: string
+        water_needs:
+          type: string
+        sun_light:
+          type: string
+      required:
+        - name
+        - species
