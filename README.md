@@ -1,8 +1,33 @@
-# Amantana Project
+# 🚀 Amantana Project
 
-## 🚀 Overview
+## 📋 Overview
 
-Amantana adalah project backend yang dibangun menggunakan Go dengan arsitektur Clean Architecture. Project ini mengimplementasikan best practices dalam pengembangan Go dan menggunakan teknologi modern untuk membangun REST API yang scalable.
+Amantana adalah project backend yang dibangun menggunakan Go dengan arsitektur Clean Architecture. Project ini mengimplementasikan best practices dalam pengembangan Go dan menggunakan teknologi modern untuk membangun REST API yang scalable untuk manajemen data tanaman.
+
+## 🛠 Tech Stack
+
+- **Framework**: Chi Router & Gin
+- **Database**: PostgreSQL dengan GORM
+- **Logging**: Zap Logger
+- **Configuration**: Viper
+- **Documentation**: Swagger/OpenAPI
+
+## 📁 Struktur Project
+
+```
+.
+├── cmd/            # Main applications
+│   ├── api/       # API server
+│   └── migrate/   # Database migrations
+├── internal/      # Private application code
+│   ├── domain/    # Enterprise business rules
+│   ├── repository/# Interface adapters
+│   ├── usecase/   # Application business rules
+│   └── delivery/  # Frameworks and drivers
+├── pkg/           # Public library code
+├── configs/       # Configuration files
+└── docs/         # Documentation
+```
 
 ## 📋 Prerequisites
 
@@ -13,38 +38,13 @@ Sebelum memulai, pastikan sistem Anda memiliki:
 - Make (optional, untuk menjalankan commands)
 - Git
 
-## 🛠 Tech Stack
-
-- **Framework**: Chi Router & Gin
-- **Database**: PostgreSQL dengan GORM
-- **Authentication**: JWT
-- **Logging**: Zap Logger
-- **Configuration**: Viper
-- **Documentation**: Swagger/OpenAPI
-
-## 📁 Struktur Project
-
-```
-.
-├── cmd/            # Main applications
-├── internal/       # Private application code
-│   ├── domain/    # Enterprise business rules
-│   ├── repository/# Interface adapters
-│   ├── usecase/   # Application business rules
-│   └── delivery/  # Frameworks and drivers
-├── pkg/           # Public library code
-├── configs/       # Configuration files
-├── docs/          # Documentation
-└── tests/         # Additional test files
-```
-
 ## 🚀 Setup & Installation
 
 1. **Clone Repository**
 
    ```bash
-   git clone https://github.com/yourusername/amantana.git
-   cd amantana
+   git clone https://github.com/aishataqina/amantana-backend.git
+   cd amantana-backend
    ```
 
 2. **Install Dependencies**
@@ -74,55 +74,40 @@ Sebelum memulai, pastikan sistem Anda memiliki:
    # Jalankan migrasi database
    go run cmd/migrate/main.go migrate
 
-   # Jalankan seeder (opsional, untuk data awal)
+   # Jalankan seed database
    go run cmd/migrate/main.go seed
    ```
 
-5. **Build Project**
+5. **Jalankan Aplikasi**
 
    ```bash
-   # Build
-   go build -o bin/amantana cmd/api/main.go
-
-   # Atau gunakan make jika tersedia
-   make build
-   ```
-
-6. **Jalankan Aplikasi**
-
-   ```bash
-   # Menggunakan binary
-   ./bin/amantana
+   # Development mode dengan hot-reload
+   go install github.com/cosmtrek/air@latest
+   air
 
    # Atau langsung dengan go run
-   go run cmd/api/main.go   # Server akan berjalan di port 8080
-
-   # Atau dengan make
-   make run
+   go run cmd/api/main.go
    ```
-
-   Jika berhasil, Anda akan melihat output:
-
-   ```bash
-   Server starting on port 8080...
-   ```
-
-   Sekarang API dapat diakses di:
-
-   - API Endpoint: `http://localhost:8080`
-   - Swagger UI: `http://localhost:8080/swagger/index.html`
-   - Health Check: `http://localhost:8080/health`
 
 ## 🔧 Development
 
-### Hot Reload (Development Mode)
+### Makefile Commands
 
 ```bash
-# Install Air untuk hot reload
-go install github.com/cosmtrek/air@latest
+# Build aplikasi
+make build
 
-# Jalankan dengan hot reload
-air
+# Jalankan aplikasi
+make run
+
+# Jalankan tests
+make test
+
+# Jalankan linter
+make lint
+
+# Generate Swagger docs
+make swagger
 ```
 
 ### Testing
@@ -139,44 +124,73 @@ go test -coverprofile=coverage.out ./...
 go tool cover -html=coverage.out
 ```
 
-### Linting
+### API Documentation
 
-```bash
-# Install golangci-lint
-go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+Swagger documentation tersedia di:
 
-# Run linter
-golangci-lint run
+- Local: `http://localhost:8080/swagger/index.html`
+- Development: `https://dev-api.amantana.com/swagger/index.html`
+- Production: `https://api.amantana.com/swagger/index.html`
+
+## 📝 API Endpoints
+
+### Plants
+
+- `GET /api/v1/plants` - Mendapatkan daftar tanaman
+- `POST /api/v1/plants` - Menambah tanaman baru
+- `GET /api/v1/plants/{id}` - Mendapatkan detail tanaman
+- `PUT /api/v1/plants/{id}` - Mengupdate data tanaman
+- `DELETE /api/v1/plants/{id}` - Menghapus tanaman
+
+## 🔒 Environment Variables
+
+```env
+# Application
+APP_ENV=development
+APP_PORT=8080
+
+# Database
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=amantana_db
+DB_USER=postgres
+DB_PASSWORD=your_password
+
+# Logging
+LOG_LEVEL=debug
 ```
 
-## 📝 API Documentation
+## 🔍 Troubleshooting
 
-API documentation tersedia di:
+### Common Issues
 
-- Swagger UI: `http://localhost:8080/swagger/index.html` (saat aplikasi running)
-- OpenAPI spec: `docs/swagger.yaml`
+1. **Database Connection**
 
-## 🔐 Environment Variables
+   ```bash
+   # Check database connection
+   go run cmd/tools/db-check.go
+   ```
 
-Berikut adalah environment variables yang perlu di-setup di file `.env`:
+2. **Permission Issues**
 
-- `APP_ENV`: environment (development/staging/production)
-- `APP_PORT`: port aplikasi
-- `DB_HOST`: database host
-- `DB_PORT`: database port
-- `DB_NAME`: nama database
-- `DB_USER`: username database
-- `DB_PASSWORD`: password database
-- `JWT_SECRET`: secret key untuk JWT
-- `LOG_LEVEL`: level logging (debug/info/error)
+   ```bash
+   # Check log files
+   tail -f logs/app.log
+   ```
 
-## 🤝 Contributing
+3. **Port Already in Use**
+   ```bash
+   # Check port usage
+   lsof -i :8080
+   ```
 
-1. Fork repository
-2. Buat feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'feat: add some AmazingFeature'`)
-4. Push ke branch (`git push origin feature/AmazingFeature`)
-5. Buat Pull Request
+## 📞 Support
+
+Jika mengalami masalah:
+
+1. Check [troubleshooting guide](#-troubleshooting)
+2. Buka issue di GitHub repository
+3. Hubungi tim development di dev@amantana.com
 
 ## 📜 License
 
