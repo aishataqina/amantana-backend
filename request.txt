@@ -1,0 +1,13 @@
+{
+    "name": "Pandan Wangi",
+    "category": "Tanaman Obat",
+    "difficulty": "Sedang",
+    "description": "Tanaman tropis yang biasa digunakan sebagai pewangi makanan",
+    "benefits": ["Pewangi alami", "Obat tradisional"],
+    "care": {
+        "watering": "Siram 2 kali seminggu",
+        "sunlight": "Cahaya tidak langsung",
+        "temperature": "20-30 derajat",
+        "soil": "Tanah yang subur"
+    }
+} 
