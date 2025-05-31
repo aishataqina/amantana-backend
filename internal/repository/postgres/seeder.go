@@ -15,7 +15,7 @@ func SeedPlants(db *gorm.DB) error {
 	plants := []domain.Plant{
 		{
 			Name:        "Philodendron Pink Princess",
-			Image:       "assets/images/philodendron-pink-princess.jpg",
+			Image:       "uploads/1d4c237f-215f-4c4f-8b05-92d1045fd76a.jpg",
 			Category:    "Tanaman Hias",
 			Difficulty:  "Sedang",
 			Description: "Philodendron Pink Princess terkenal dengan daunnya yang memiliki variegasi merah muda yang cantik.",
@@ -29,7 +29,7 @@ func SeedPlants(db *gorm.DB) error {
 		},
 		{
 			Name:        "Alocasia Black Velvet",
-			Image:       "assets/images/alocasia-black-velvet.jpg",
+			Image:       "uploads/alocasia-black-velvet.jpg",
 			Category:    "Tanaman Hias",
 			Difficulty:  "Sedang",
 			Description: "Tanaman hias dengan daun beludru hitam yang eksotis",
@@ -43,7 +43,7 @@ func SeedPlants(db *gorm.DB) error {
 		},
 		{
 			Name:        "Lidah Buaya",
-			Image:       "assets/images/lidah-buaya.jpg",
+			Image:       "uploads/lidah-buaya.jpg",
 			Category:    "Tanaman Obat",
 			Difficulty:  "Mudah",
 			Description: "Tanaman sukulen yang dikenal karena khasiatnya untuk kulit dan rambut.",
@@ -57,7 +57,7 @@ func SeedPlants(db *gorm.DB) error {
 		},
 		{
 			Name:        "Bird of Paradise",
-			Image:       "assets/images/bird-of-paradise.jpg",
+			Image:       "uploads/bird-of-paradise.jpg",
 			Category:    "Tanaman Hias",
 			Difficulty:  "Sedang",
 			Description: "Bird of Paradise adalah tanaman dengan daun besar dan bunga eksotis yang menawan.",
@@ -71,7 +71,7 @@ func SeedPlants(db *gorm.DB) error {
 		},
 		{
 			Name:        "Monstera Deliciosa",
-			Image:       "assets/images/monstera-deliciosa.jpg",
+			Image:       "uploads/monstera-deliciosa.jpg",
 			Category:    "Tanaman Hias",
 			Difficulty:  "Sedang",
 			Description: "Tanaman dengan daun besar berlubang yang sangat dekoratif.",
@@ -85,7 +85,7 @@ func SeedPlants(db *gorm.DB) error {
 		},
 		{
 			Name:        "Sirih Gading",
-			Image:       "assets/images/sirih-gading.jpg",
+			Image:       "uploads/sirih-gading.jpg",
 			Category:    "Tanaman Hias",
 			Difficulty:  "Mudah",
 			Description: "Tanaman rambat dengan daun hijau bercorak kuning yang populer sebagai tanaman indoor.",
@@ -99,7 +99,7 @@ func SeedPlants(db *gorm.DB) error {
 		},
 		{
 			Name:        "Kangkung",
-			Image:       "assets/images/kangkung.jpeg",
+			Image:       "uploads/kangkung.jpeg",
 			Category:    "Tanaman Sayur",
 			Difficulty:  "Mudah",
 			Description: "Sayuran hijau cepat tumbuh yang populer dalam masakan Indonesia.",
@@ -113,7 +113,7 @@ func SeedPlants(db *gorm.DB) error {
 		},
 		{
 			Name:        "Tomat",
-			Image:       "assets/images/tomat.jpg",
+			Image:       "uploads/tomat.jpg",
 			Category:    "Tanaman Buah",
 			Difficulty:  "Sedang",
 			Description: "Tanaman buah kecil yang kaya akan vitamin C dan likopen.",
@@ -127,7 +127,7 @@ func SeedPlants(db *gorm.DB) error {
 		},
 		{
 			Name:        "Kemangi",
-			Image:       "assets/images/kemangi.jpg",
+			Image:       "uploads/kemangi.jpg",
 			Category:    "Tanaman Obat",
 			Difficulty:  "Mudah",
 			Description: "Tanaman daun aromatik yang digunakan dalam banyak masakan dan pengobatan tradisional.",
@@ -141,7 +141,7 @@ func SeedPlants(db *gorm.DB) error {
 		},
 		{
 			Name:        "Chinese Evergreen",
-			Image:       "assets/images/chinese-evergreen.jpg",
+			Image:       "uploads/chinese-evergreen.jpg",
 			Category:    "Tanaman Hias",
 			Difficulty:  "Mudah",
 			Description: "Chinese Evergreen adalah tanaman yang mudah dirawat dengan daun berpola menarik.",
@@ -155,7 +155,7 @@ func SeedPlants(db *gorm.DB) error {
 		},
 		{
 			Name:        "Kaktus Mini",
-			Image:       "assets/images/kaktus-mini.jpeg",
+			Image:       "uploads/kaktus-mini.jpeg",
 			Category:    "Tanaman Hias",
 			Difficulty:  "Mudah",
 			Description: "Tanaman berduri kecil yang cocok sebagai dekorasi meja.",
@@ -169,7 +169,7 @@ func SeedPlants(db *gorm.DB) error {
 		},
 		{
 			Name:        "Jahe",
-			Image:       "assets/images/jahe.jpg",
+			Image:       "uploads/jahe.jpg",
 			Category:    "Tanaman Obat",
 			Difficulty:  "Sedang",
 			Description: "Rimpang yang digunakan sebagai rempah dan obat tradisional.",
@@ -183,7 +183,7 @@ func SeedPlants(db *gorm.DB) error {
 		},
 		{
 			Name:        "Lavender",
-			Image:       "assets/images/lavender.jpg",
+			Image:       "uploads/lavender.jpg",
 			Category:    "Tanaman Hias",
 			Difficulty:  "Mudah",
 			Description: "Tanaman dengan bunga ungu harum yang sering digunakan untuk aromaterapi.",
@@ -197,7 +197,7 @@ func SeedPlants(db *gorm.DB) error {
 		},
 		{
 			Name:        "Bayam",
-			Image:       "assets/images/bayam.jpg",
+			Image:       "uploads/bayam.jpg",
 			Category:    "Tanaman Sayur",
 			Difficulty:  "Mudah",
 			Description: "Sayuran hijau kaya nutrisi yang mudah ditanam.",
@@ -211,7 +211,7 @@ func SeedPlants(db *gorm.DB) error {
 		},
 		{
 			Name:        "Basil",
-			Image:       "assets/images/basil.jpg",
+			Image:       "uploads/basil.jpg",
 			Category:    "Tanaman Obat",
 			Difficulty:  "Mudah",
 			Description: "Tanaman aromatik yang sering dipakai untuk masakan dan obat tradisional.",
@@ -225,7 +225,7 @@ func SeedPlants(db *gorm.DB) error {
 		},
 		{
 			Name:        "Cabe Rawit",
-			Image:       "assets/images/cabe-rawit.jpg",
+			Image:       "uploads/cabe-rawit.jpg",
 			Category:    "Tanaman Buah",
 			Difficulty:  "Sedang",
 			Description: "Tanaman buah pedas yang banyak dipakai dalam masakan Indonesia.",
@@ -239,7 +239,7 @@ func SeedPlants(db *gorm.DB) error {
 		},
 		{
 			Name:        "Fiddle Leaf Fig",
-			Image:       "assets/images/fiddle-leaf-fig.jpg",
+			Image:       "uploads/fiddle-leaf-fig.jpg",
 			Category:    "Tanaman Hias",
 			Difficulty:  "Sulit",
 			Description: "Fiddle Leaf Fig atau Ficus Lyrata adalah tanaman populer dengan daun besar berbentuk biola.",
@@ -253,7 +253,7 @@ func SeedPlants(db *gorm.DB) error {
 		},
 		{
 			Name:        "Jasmine",
-			Image:       "assets/images/jasmine.jpg",
+			Image:       "uploads/jasmine.jpg",
 			Category:    "Tanaman Hias",
 			Difficulty:  "Sedang",
 			Description: "Tanaman bunga harum yang populer sebagai tanaman hias dan pengharum ruangan.",
@@ -267,7 +267,7 @@ func SeedPlants(db *gorm.DB) error {
 		},
 		{
 			Name:        "Pachira Aquatica",
-			Image:       "assets/images/pachira-aquatica.jpg",
+			Image:       "uploads/pachira-aquatica.jpg",
 			Category:    "Tanaman Hias",
 			Difficulty:  "Mudah",
 			Description: "Tanaman uang yang dipercaya membawa keberuntungan.",
@@ -281,7 +281,7 @@ func SeedPlants(db *gorm.DB) error {
 		},
 		{
 			Name:        "Mint",
-			Image:       "assets/images/mint.jpg",
+			Image:       "uploads/mint.jpg",
 			Category:    "Tanaman Obat",
 			Difficulty:  "Mudah",
 			Description: "Tanaman herbal dengan aroma segar yang banyak dipakai dalam minuman dan obat tradisional.",
@@ -295,7 +295,7 @@ func SeedPlants(db *gorm.DB) error {
 		},
 		{
 			Name:        "Bonsai Serut",
-			Image:       "assets/images/bonsai-serut.jpg",
+			Image:       "uploads/bonsai-serut.jpg",
 			Category:    "Tanaman Hias",
 			Difficulty:  "Sulit",
 			Description: "Tanaman hias miniatur dengan teknik khusus.",
@@ -309,7 +309,7 @@ func SeedPlants(db *gorm.DB) error {
 		},
 		{
 			Name:        "Anggrek Bulan",
-			Image:       "assets/images/anggrek-bulan.jpg",
+			Image:       "uploads/anggrek-bulan.jpg",
 			Category:    "Tanaman Hias",
 			Difficulty:  "Sulit",
 			Description: "Anggrek dengan bunga putih cantik yang tahan lama.",
@@ -323,7 +323,7 @@ func SeedPlants(db *gorm.DB) error {
 		},
 		{
 			Name:        "Bayam Merah",
-			Image:       "assets/images/bayam-merah.jpg",
+			Image:       "uploads/bayam-merah.jpg",
 			Category:    "Tanaman Sayur",
 			Difficulty:  "Mudah",
 			Description: "Varietas bayam dengan daun berwarna merah kaya antioksidan.",
@@ -337,7 +337,7 @@ func SeedPlants(db *gorm.DB) error {
 		},
 		{
 			Name:        "Bunga Matahari",
-			Image:       "assets/images/bunga-matahari.jpg",
+			Image:       "uploads/bunga-matahari.jpg",
 			Category:    "Tanaman Hias",
 			Difficulty:  "Mudah",
 			Description: "Tanaman bunga berwarna cerah yang mengikuti arah matahari.",
