@@ -1,8 +1,8 @@
-# 🚀 Amantana Project
+# 🚀 Plantify Project
 
 ## 📋 Overview
 
-Amantana adalah project backend yang dibangun menggunakan Go dengan arsitektur Clean Architecture. Project ini mengimplementasikan best practices dalam pengembangan Go dan menggunakan teknologi modern untuk membangun REST API yang scalable untuk manajemen data tanaman.
+Plantify adalah project backend yang dibangun menggunakan Go dengan arsitektur Clean Architecture. Project ini mengimplementasikan best practices dalam pengembangan Go dan menggunakan teknologi modern untuk membangun REST API yang scalable untuk manajemen data tanaman.
 
 ## 🛠 Tech Stack
 

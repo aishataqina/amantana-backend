@@ -57,7 +57,7 @@ docker-build:
 	docker build -t $(BINARY_NAME) .
 
 docker-run:
-	docker run -p 8080:8080 $(BINARY_NAME)
+	docker run -p :8080 $(BINARY_NAME)
 
 migrate-up:
 	migrate -path database/migration -database "postgresql://postgres:postgres@localhost:5432/amantana_db?sslmode=disable" -verbose up
